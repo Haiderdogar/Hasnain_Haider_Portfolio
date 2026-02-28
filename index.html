@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #293519 0%, #EFD003 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .mobile-frame {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            border-radius: 30px;
+            background: #f8fafc;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .mobile-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 20px;
+            background: #f8fafc;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[#293519] shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Brand -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-[#EFD003]">PORTFOLIO</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-[#EFD003] transition duration-200">Home</a>
+                    <a href="#about" class="text-white hover:text-[#EFD003] transition duration-200">About</a>
+                    <a href="#skills" class="text-white hover:text-[#EFD003] transition duration-200">Skills</a>
+                    <a href="#projects" class="text-white hover:text-[#EFD003] transition duration-200">Projects</a>
+                    <a href="#contact" class="text-white hover:text-[#EFD003] transition duration-200">Contact</a>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#293519] pb-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-white hover:text-[#EFD003] transition duration-200">Home</a>
+            <a href="#about" class="block py-2 text-white hover:text-[#EFD003] transition duration-200">About</a>
+            <a href="#skills" class="block py-2 text-white hover:text-[#EFD003] transition duration-200">Skills</a>
+            <a href="#projects" class="block py-2 text-white hover:text-[#EFD003] transition duration-200">Projects</a>
+            <a href="#contact" class="block py-2 text-white hover:text-[#EFD003] transition duration-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+
+                <!-- Text Section -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-xl md:text-2xl font-medium mb-1 text-white">
+                        Hello, my name is
+                    </h1>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#EFD003]">
+
+                        Hasnain Haider
+                    </h2>
+
+
+                    <!-- Typing Subtitle -->
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-4 h-12">
+                        <span id="typed-text"></span>
+                        <span class="border-r-2 border-white animate-pulse ml-1"></span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-lg md:text-xl mb-8">
+                        I build beautiful, high-performance mobile applications for Android and iOS using Flutter
+                        framework. With expertise in clean architecture and state management.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#projects"
+                            class="bg-white text-[#293519] px-6 py-3 rounded-lg font-medium border border-[#293519] hover:bg-[#f3f3e5] transition duration-200">
+                            View My Work
+                        </a>
+                        <a href="#contact"
+                            class="bg-[#293519] text-white px-6 py-3 rounded-lg font-medium border border-white hover:bg-white hover:text-[#293519] transition duration-200">
+                            Contact Me
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Image Section -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="mobile-frame floating">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8e3a9fa4-78e8-4b09-a417-48aa8675645a.png"
+                            alt="Flutter mobile app demo showing a modern user interface with clean design elements"
+                            class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">10+</div>
+                    <div class="text-sm uppercase tracking-wider">Apps Built</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">10k+</div>
+                    <div class="text-sm uppercase tracking-wider">Downloads</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">2+</div>
+                    <div class="text-sm uppercase tracking-wider">Years Exp</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">7+</div>
+                    <div class="text-sm uppercase tracking-wider">Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#293519] mb-4">About Me</h2>
+
+            </div>
+
+            <div class="flex flex-col md:flex-row items-stretch gap-12">
+
+                <!-- Profile Photo (Left) -->
+                <div class="md:w-1/3 h-full text-center md:text-left">
+                    <div class="h-full">
+                        <img src="assets/profile/hasnain.jpg" alt="Hasnain Haider - Flutter Developer"
+                            class="w-full h-full object-cover rounded-lg shadow-lg mb-4" />
+                    </div>
+                </div>
+
+
+                <!-- About Text (Right) -->
+                <div class="md:w-2/3 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                            Hi, I'm Hasnain Haider — <span id="typed-about" class="text-[#EFD003]"></span><span
+                                class="border-r-2 border-[#293519]animate-pulse ml-1"></span>
+                        </h3>
+
+                        <p class="text-lg text-gray-600 mb-4">
+                            I'm an Expert Flutter Developer with over 2+ years of experience building high-performance,
+                            cross-platform mobile apps. My expertise lies in developing scalable and maintainable
+                            applications
+                            using Flutter for both Android and iOS platforms.
+                        </p>
+
+                        <p class="text-lg text-gray-600 mb-6 font-medium">I specialize in:</p>
+
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-gray-700 list-none">
+                            <li>✅ End-to-end Flutter app development</li>
+                            <li>✅ Clean Architecture and Modular Codebase</li>
+                            <li>✅ API & Firebase integration</li>
+                            <li>✅ Payment gateways</li>
+                            <li>✅ UI/UX Implementation from Figma/Sketch</li>
+                            <li>✅ Advanced State Management (Provider, Riverpod, GetX)</li>
+                            <li>✅ CI/CD with GitHub Actions & CodeMagic</li>
+                            <li>✅ App Store & Play Store Deployment</li>
+                            <li>✅ Google Maps Integration</li>
+                            <li>✅ In-App Purchases (IAP) with RevenueCat</li>
+                            <li>✅ Localization & Internationalization (i18n/l10n)</li>
+                            <li>✅ Push Notifications (Firebase, OneSignal)</li>
+                            <li>✅ AI Integration (ChatGPT, Claude AI, Gemini)</li>
+                            <li>✅ Realtime Chat & Messaging Features</li>
+                            <li>✅ Firebase Firestore, Auth, and Cloud Functions</li>
+                            <li>✅ Git & Version Control (GitHub, GitLab)</li>
+                        </ul>
+
+                        <p class="text-lg text-gray-600 mb-6">
+                            I'm passionate about solving real-world problems through code and delivering clean,
+                            efficient,
+                            and engaging user experiences. Let's build something amazing together!
+                        </p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap gap-4 mt-auto">
+                        <a href="#contact"
+                            class="bg-[#293519] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1e2a12] transition duration-200">
+                            Hire Me
+                        </a>
+                        <a href="#projects"
+                            class="border-2 border-[#293519] text-[#293519] px-6 py-3 rounded-lg font-medium hover:bg-[#f3f3e5] transition duration-200">
+                            View Projects
+                        </a>
+                        <a href="Hasnain_Haider_Resume.pdf" download
+                            class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition duration-200">
+                            Download CV
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#293519] mb-4">My Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    I specialize in cross-platform mobile development with expertise in these technologies
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Flutter -->
+                <div class="skill-badge bg-indigo-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/flutter.png" alt="Flutter" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Flutter</h3>
+                    <p class="text-sm text-gray-600">Cross-platform framework</p>
+                </div>
+
+                <!-- Dart -->
+                <div class="skill-badge bg-blue-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/dart.png" alt="Dart" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Dart</h3>
+                    <p class="text-sm text-gray-600">Programming language</p>
+                </div>
+
+                <!-- Firebase -->
+                <div class="skill-badge bg-orange-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/firebase.png" alt="Firebase" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Firebase</h3>
+                    <p class="text-sm text-gray-600">Backend services</p>
+                </div>
+
+                <!-- UI/UX -->
+                <div class="skill-badge bg-purple-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/uiux.png" alt="UI/UX Design" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">UI/UX Design</h3>
+                    <p class="text-sm text-gray-600">Mobile interfaces</p>
+                </div>
+
+                <!-- Android -->
+                <div class="skill-badge bg-green-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/android.png" alt="Android" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Android</h3>
+                    <p class="text-sm text-gray-600">Native development</p>
+                </div>
+
+                <!-- iOS -->
+                <div class="skill-badge bg-gray-100 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/ios.webp" alt="iOS" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">iOS</h3>
+                    <p class="text-sm text-gray-600">Native development</p>
+                </div>
+
+                <!-- State Management -->
+                <div class="skill-badge bg-red-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/state_management.png" alt="State Management" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">State Mgmt</h3>
+                    <p class="text-sm text-gray-600">Provider, Riverpod, GetX</p>
+                </div>
+
+                <!-- API Integration -->
+                <div class="skill-badge bg-[#FFFBCC]  rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/api.png" alt="API Integration" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">API Integration</h3>
+                    <p class="text-sm text-gray-600">REST, GraphQL</p>
+                </div>
+
+                <!-- GitHub -->
+                <div class="skill-badge bg-gray-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/github.png" alt="GitHub" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Git & GitHub</h3>
+                    <p class="text-sm text-gray-600">Version Control</p>
+                </div>
+
+                <!-- GitHub Actions -->
+                <div class="skill-badge bg-indigo-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/github_actions.png" alt="GitHub Actions" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">GitHub Actions</h3>
+                    <p class="text-sm text-gray-600">CI/CD Automation</p>
+                </div>
+
+                <!-- Push Notifications -->
+                <div class="skill-badge bg-[#FFFBCC]  rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/push_notification.png" alt="Push Notifications" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Push Notifications</h3>
+                    <p class="text-sm text-gray-600">Firebase & OneSignal</p>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="skill-badge bg-green-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/google_maps.png" alt="Google Maps" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Google Maps</h3>
+                    <p class="text-sm text-gray-600">Location Integration</p>
+                </div>
+
+                <!-- In-App Purchase -->
+                <div class="skill-badge bg-pink-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/inapp_purchase.png" alt="In-App Purchase" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">In-App Purchases</h3>
+                    <p class="text-sm text-gray-600">RevenueCat, StoreKit</p>
+                </div>
+
+                <!-- AI Tools -->
+                <div class="skill-badge bg-blue-50 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/ai_tools.png" alt="AI Tools" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">AI Tools</h3>
+                    <p class="text-sm text-gray-600">ChatGPT, Claude, Gemini</p>
+                </div>
+
+                <!-- Localization -->
+                <div class="skill-badge bg-purple-100 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/localization.png" alt="Localization" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Localization</h3>
+                    <p class="text-sm text-gray-600">i18n & l10n Support</p>
+                </div>
+
+                <!-- Deployment -->
+                <div class="skill-badge bg-gray-100 rounded-xl p-6 text-center transition">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-sm">
+                        <img src="assets/skills/deployment.png" alt="Deployment" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Deployment</h3>
+                    <p class="text-sm text-gray-600">Play Store & App Store</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#293519] mb-4">My Experience</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Professional journey in mobile development</p>
+            </div>
+
+            <div class="space-y-10 max-w-3xl mx-auto">
+
+
+
+
+                <!-- Experience 1: Freelance -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Flutter Developer (Freelance)</h3>
+                        <p class="text-green-600">Self-Employed | Present</p>
+                        <p class="text-gray-600 mt-2">Working with international clients to design and develop
+                            feature-rich mobile apps using Flutter. Focused on clean UI, state management, payment
+                            systems, and AI integrations.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Orbion Technologies -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#d5dabe] flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Flutter Developer</h3>
+                        <p class="text-indigo-600">Orbion Technologies | Oct 2023 – Dec 2025</p>
+                        <p class="text-gray-600 mt-2">Worked as a flutter mobile developer, building and maintaining
+                            production-ready Flutter apps with scalable architecture, CI/CD integration, and performance
+                            optimization.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-[#293519] mb-4">My Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A showcase of my innovative applications built with
+                    modern technologies</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: Artflow Pro -->
+                <div onclick="openModal(
+    'Artflow Pro',
+    `Artflow Pro is a feature-rich platform designed for artists and galleries, supporting role-based access and monetization via tiered subscriptions.
+
+🔷 ASP.NET API Integration: Robust backend using ASP.NET Web API for high performance and scalability.
+🔷 AI-Powered Features: AI-generated social media content and promotional materials.
+🔷 User Roles: Artist & Gallery roles with distinct capabilities.
+🔷 Free & Pro Accounts: Tiered access with monetization options and enhanced tools for Pro users.
+🔷 Real-Time Chat: SignalR-based live chat between users.
+🔷 Image Uploads: Optimized Cloudinary integration for image handling.
+🔷 Secure Storage: Environment variables and secure storage for sensitive data.
+🔷 In-App Purchases: Smooth upgrade path from Free to Pro accounts.`,
+    [
+        'assets/artflow_pro_images/artflow_1.png',
+        'assets/artflow_pro_images/artflow_2.png',
+        'assets/artflow_pro_images/artflow_3.png',
+        'assets/artflow_pro_images/artflow_4.png',
+        'assets/artflow_pro_images/artflow_5.png',
+        'assets/artflow_pro_images/artflow_6.png',
+        'assets/artflow_pro_images/artflow_7.png',
+        'assets/artflow_pro_images/artflow_8.png',
+        'assets/artflow_pro_images/artflow_9.png'
+    ],
+    ['Flutter', 'ASP.NET API', 'AI Integration', 'SignalR', 'Cloudinary', 'Secure Storage', 'In-App Purchase']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/artflowpro.png"
+                            alt="Minimalist digital art gallery interface showing various art pieces with filters and purchase options visible"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white g-[#293519]">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Artflow Pro</h3>
+                        <p class="text-gray-600 mb-4">Artist & Gallery Platform with AI, Role-Based Access, and
+                            Real-Time Features</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">ASP.NET API</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">SignalR</span>
+                            <span class="tech-tag">Cloudinary</span>
+                            <span class="tech-tag">Secure Storage</span>
+                            <span class="tech-tag">In-App Purchase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Spheres App -->
+                <div onclick="openModal(
+    'Spheres – AI Personal Assistant',
+    `Spheres is a smart AI-powered assistant app designed to boost personal productivity through intelligent task handling and seamless user interaction — blending the capabilities of a chatbot with advanced planning tools.
+
+🧠 AI Chatbot Integration: Built on custom prompt engineering, offering emotionally responsive and contextual conversations.
+🗓️ Smart Task & Meeting Management: Create and manage tasks, meetings, reminders, and notes with AI assistance.
+🔐 Firebase Integration: Real-time data storage, authentication, and notifications.
+⏰ Reminders & Alerts: Supports one-time and recurring schedules — daily, weekly, or monthly.
+🗺️ Maps & Calendar APIs: Location-aware scheduling and Google Calendar syncing.
+🔌 Third-Party APIs: Extendable with external services for added functionality.
+👤 User Profiling: Learns user habits to offer better suggestions.
+💬 Emotionally Aware Chat: Supports personal, emotional conversations beyond productivity.`,
+    [
+        'assets/spheres_images/spheres_1.png',
+        'assets/spheres_images/spheres_2.png',
+        'assets/spheres_images/spheres_3.png',
+        'assets/spheres_images/spheres_4.png',
+        'assets/spheres_images/spheres_5.png',
+        'assets/spheres_images/spheres_6.png',
+        'assets/spheres_images/spheres_7.png',
+        'assets/spheres_images/spheres_8.png',
+        'assets/spheres_images/spheres_9.png',
+        'assets/spheres_images/spheres_10.png',
+        'assets/spheres_images/spheres_11.png',
+        'assets/spheres_images/spheres_12.png',
+        'assets/spheres_images/spheres_13.png',
+        'assets/spheres_images/spheres_14.png',
+        'assets/spheres_images/spheres_15.png',
+        'assets/spheres_images/spheres_16.png',
+        'assets/spheres_images/spheres_17.png',
+        'assets/spheres_images/spheres_18.png',
+    ],
+    ['Flutter', 'Firebase', 'AI Integration', 'Google Maps', 'Calendar API', 'Third-Party APIs', 'Secure Storage']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/spheres.png"
+                            alt="Modern AI assistant mobile interface showing conversation bubbles with a friendly tone, calendar integration visible in the background"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Spheres App</h3>
+                        <p class="text-gray-600 mb-4">AI-powered personal assistant for productivity & well-being</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">Calendar API</span>
+                            <span class="tech-tag">Google Maps</span>
+                            <span class="tech-tag">Secure Storage</span>
+                            <span class="tech-tag">Third-Party APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Webination App -->
+                <div onclick="openModal(
+    'Webination Business Hub',
+    `Webnition is a powerful data-driven mobile application built to visualize and analyze business and personal information across the U.S., offering real-time interaction and advanced UI features.
+
+🌐 ASP.NET API Integration: Seamlessly connects to a powerful backend for real-time data retrieval and complex queries.
+📊 Dynamic Data Visualization: Displays interactive pie charts, bar graphs, and line charts across different time frames (weekly, monthly, yearly).
+⚡ Performance Enhancements: Includes shimmer loading effects and infinite scrolling for large datasets, like YouTube’s smooth feed.
+📍 Location-Based Services: Provides live tracking and shows office locations on map views for both individuals and companies.
+📁 Detailed Profiles: Offers insights into company history, office addresses, and verified user reviews.
+🇺🇸 U.S. Focused: Designed around American datasets and business ecosystem.`,
+     [
+        'assets/webinition_images/webnition_1.jpeg',
+        'assets/webinition_images/webnition_2.jpeg',
+        'assets/webinition_images/webnition_3.jpeg',
+        'assets/webinition_images/webnition_4.jpeg',
+        'assets/webinition_images/webnition_5.jpeg',
+        'assets/webinition_images/webnition_6.jpeg',
+        'assets/webinition_images/webnition_7.jpeg',
+        'assets/webinition_images/webnition_8.jpeg',
+        'assets/webinition_images/webnition_9.jpeg',
+        'assets/webinition_images/webnition_10.jpeg',
+        'assets/webinition_images/webnition_11.jpeg',
+    ],
+    ['Flutter', 'ASP.NET API', 'Data Visualization', 'Live Location', 'Firebase']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/webnition.png"
+                            alt="Dashboard interface displaying business locations on a map with analytics graphs and search filters"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white bg-blue-600">
+                                New Release
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Webination App</h3>
+                        <p class="text-gray-600 mb-4">Business insights & analytics platform for U.S. markets</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">ASP.NET API</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Live Location</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: CareHub -->
+                <div onclick="openModal(
+    'CareHub Health Platform',
+    `CareHub is a scalable mobile healthcare app built for caregivers, patients, and family members, delivering essential real-time features and smooth cross-platform performance on Android and iOS.
+
+🩺 Role-Based Access Control (RBAC): Distinct user roles — Caregiver, Patient, and Family Member — each with tailored views and permissions.
+📱 Cross-Platform Flutter App: Built using Flutter to ensure high performance and consistent UI on both Android and iOS.
+🔒 Firebase Authentication: Secured sign-in via phone number verification.
+💬 Real-Time Chat: Facilitates instant communication between patients, family members, and healthcare providers.
+📲 FCM Notifications: Push updates via Firebase Cloud Messaging.
+⚙️ Riverpod State Management: Clean and maintainable app logic.
+🌐 Multilingual Support: Integrated Flutter Intl for global accessibility.
+🧩 Scalable Design: Responsive, modular, and future-proof architecture.`,
+    [
+        'assets/carhub_images/carehub_1.png',
+        'assets/carhub_images/carehub_2.png',
+        'assets/carhub_images/carehub_3.png',
+        'assets/carhub_images/carehub_4.png',
+        'assets/carhub_images/carehub_5.png',
+        'assets/carhub_images/carehub_6.png',
+        'assets/carhub_images/carehub_7.png',
+        'assets/carhub_images/carehub_8.png',
+        'assets/carhub_images/carehub_9.png',
+        'assets/carhub_images/carehub_10.png',
+        'assets/carhub_images/carehub_11.png',
+        'assets/carhub_images/carehub_12.png',
+        'assets/carhub_images/carehub_13.png',
+        'assets/carhub_images/carehub_14.png',
+        'assets/carhub_images/carehub_15.png',
+        'assets/carhub_images/carehub_16.png',
+    ],
+    ['Flutter', 'Firebase', 'Riverpod', 'FCM', 'Localization', 'Realtime Chat']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/carehub.png"
+                            alt="Medical interface showing appointment calendar, patient records, and health metrics visualization"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">CareHub</h3>
+                        <p class="text-gray-600 mb-4">Cross-platform healthcare companion</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Riverpod</span>
+                            <span class="tech-tag">FCM</span>
+                            <span class="tech-tag">Localization</span>
+                            <span class="tech-tag">Realtime Chat</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 5: BRAKE -->
+                <div onclick="openModal(
+    'BRAKE Automotive',
+    `BRAKE is a cross-platform presentation and sync tool that enables real-time slide synchronization across mobile and web devices. It is designed for presenters and audiences to enjoy lag-free collaboration and control.
+
+🎛️ Real-Time Slide Sync: Slide transitions made on one device reflect instantly across all connected platforms — mobile and web.
+📱 Cross-Platform Compatibility: Built using Flutter, supporting Android, iOS, and Web from a single codebase.
+🔄 Firebase Integration: Real-time state synchronization for connected users and live interactions.
+🔐 ASP.NET API Backend: Securely handles user auth, session logic, and data transmission.
+🔁 Two-Way Control: Presenters can operate slides from mobile or web devices.
+📶 Multi-Device Login: Simultaneous login from different devices to manage or view sessions.`,
+    [
+        'assets/Brake_images/brake_1.png',
+        'assets/Brake_images/brake_2.png',
+        'assets/Brake_images/brake_3.png',
+        'assets/Brake_images/brake_4.png',
+        'assets/Brake_images/brake_5.png',
+        'assets/Brake_images/brake_6.png',
+        'assets/Brake_images/brake_7.png',
+        'assets/Brake_images/brake_8.png',
+        'assets/Brake_images/brake_9.png',
+        'assets/Brake_images/brake_10.png',
+        'assets/Brake_images/brake_11.png',
+        'assets/Brake_images/brake_12.png',
+        'assets/Brake_images/brake_13.png',
+    ],
+    ['Flutter', 'Firebase', 'ASP.NET API', 'Firebase Server', 'Cross-Platform', 'Real-Time Sync']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/brake.png"
+                            alt="Vehicle dashboard showing maintenance schedule, diagnostic alerts, and service history visualization"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">BRAKE</h3>
+                        <p class="text-gray-600 mb-4">Real-time sync & presentation controller</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">FirebaseServer</span>
+                            <span class="tech-tag">ASP.NET API</span>
+                            <span class="tech-tag">Real-Time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: BuySpy -->
+                <div onclick="openModal(
+  'BuySpy Marketplace',
+  `BuySpy is a real-time eCommerce companion app built to track and alert users about active product listings on eBay. Designed with a focus on deal-hunting and user convenience, it brings live sales directly to your device.
+
+🛒 eBay API Integration: Fetches and displays live product listings from eBay in real time, mimicking an eBay-like browsing experience.
+📱 Cross-Platform Flutter App: Deployed for both Android and iOS, ensuring a consistent and smooth interface across devices.
+🔔 Configurable Notification Alerts: Users can choose how frequently they receive notifications — 1, 5, 15, 30 minutes, or 1 hour.
+📡 Firebase Cloud Messaging: Push notifications for product changes or new listings.
+🔐 ASP.NET Backend: Handles API request management, user data processing, and scheduling logic securely and efficiently.
+⚡ Real-Time Tracking: Instantly alerts users to price drops or new deals, keeping them ahead in the competitive buying process.`,
+  'https://placehold.co/800x600/0891b2/FFFFFF?text=BuySpy',
+  ['Flutter', 'eBay API', 'Firebase', 'ASP.NET API', 'FCM', 'Real-Time Tracking']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/buyspy.png"
+                            alt="E-commerce comparison interface showing multiple retailer prices for a product with savings percentage highlighted"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">BuySpy</h3>
+                        <p class="text-gray-600 mb-4">Live eBay deal tracker app</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">eBay API</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">ASP.NET API</span>
+                            <span class="tech-tag">FCM</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 7: Seabee Study -->
+                <div onclick="openModal(
+  'Seabee Learning',
+  `Seabee Study is an educational mobile app designed for university students to practice and master course-related MCQs in real time. It supports progress tracking, scoring analytics, and tiered access levels for both casual learners and advanced users.
+
+📘 MCQ-Based Learning: Offers a rich bank of university-level multiple-choice questions, divided into Basic and Advanced phases to suit all learners.
+⚡ Real-Time Scoring: Users receive instant feedback and scores upon answering, helping reinforce learning through immediate correction.
+🔥 Firebase Integration:
+– Real-time Database for syncing MCQs, scores, and user progress.
+– Authentication to manage account types (Free vs. Pro).
+📊 Progress Tracking: Displays individual learning analytics, scores, and performance trends to monitor academic improvement.
+🔓 Tiered Access:
+– Free Account: Access to basic MCQs and features.
+– Pro Account: Unlocks advanced question sets, detailed analytics, and priority content updates.`,
+  [
+        'assets/Seabee_Study_images /seabee_1.png',
+        'assets/Seabee_Study_images /seabee_2.png',
+       'assets/Seabee_Study_images /seabee_3.png',
+       'assets/Seabee_Study_images /seabee_4.png',
+       'assets/Seabee_Study_images /seabee_5.png',
+       'assets/Seabee_Study_images /seabee_6.png',
+       'assets/Seabee_Study_images /seabee_7.png',
+       'assets/Seabee_Study_images /seabee_8.png',
+       'assets/Seabee_Study_images /seabee_9.png',
+       'assets/Seabee_Study_images /seabee_10.png',
+       'assets/Seabee_Study_images /seabee_11.png',
+       'assets/Seabee_Study_images /seabee_12.png',
+       'assets/Seabee_Study_images /seabee_13.png',
+       'assets/Seabee_Study_images /seabee_14.png',
+       'assets/Seabee_Study_images /seabee_15.png',
+    ],
+  ['Flutter', 'Firebase', 'Real-Time DB', 'Authentication', 'Analytics', 'Tiered Access']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/seabee.png"
+                            alt="Education app interface showing course modules with progress indicators and interactive learning elements"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Seabee Study</h3>
+                        <p class="text-gray-600 mb-4">Real-time MCQ learning platform</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Real-Time DB</span>
+                            <span class="tech-tag">Authentication</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Carbid -->
+                <div onclick="openModal(
+  'Carbid Marketplace',
+  `Carbid is a real-time product auction app designed for a global audience, offering live bidding, real-time chat, and multilingual support to enhance the online buying and selling experience.
+
+🚗 Live Bidding System: Users can bid on products in real time, with instant updates on auction status and pricing.
+💬 Real-Time Communication: Integrated SignalR in Flutter to support live chat and synchronized bidding notifications across devices.
+🔐 ASP.NET API Integration: Manages backend operations including bidding logic, product listings, and user sessions securely and efficiently.
+🌐 Internationalization & Localization:
+– Supports multiple languages and regions, enabling a globally accessible platform.
+– Dynamically adapts text and formats based on the user's locale.
+⚡ Seamless User Experience: Real-time interactivity delivers a smooth and engaging buying/selling environment across all supported countries.`,
+  [
+    'assets/carbid_images/carbid_1.jpeg',
+    'assets/carbid_images/carbid_2.jpeg',
+    'assets/carbid_images/carbid_3.jpeg',
+    'assets/carbid_images/carbid_4.jpeg',
+    'assets/carbid_images/carbid_5.jpeg',
+  ],
+  ['Flutter', 'ASP.NET API', 'SignalR', 'Localization', 'Real-Time Bidding', 'Live Chat']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/carbid.png"
+                            alt="Car marketplace interface showing vehicle listings with filters for make, model, price range and financing options"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Carbid</h3>
+                        <p class="text-gray-600 mb-4">Real-time vehicle auction platform</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">SignalR</span>
+                            <span class="tech-tag">ASP.NET API</span>
+                            <span class="tech-tag">Localization</span>
+                            <span class="tech-tag">Live Chat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Wedding Planner -->
+                <div onclick="openModal(
+  'Wedding Planner Pro',
+  `Wedding Planner is an elegant and intuitive mobile app designed to help users effortlessly organize their weddings. It offers a feature-rich, visually appealing experience that transforms complex planning into a joyful journey.
+
+💍 Flutter-Powered UI: Built with Flutter for a smooth, responsive, and consistent experience across Android and iOS.
+🔥 Firebase Integration:
+– Real-time data management for tasks, guests, budgets, and event timelines.
+– Cloud Messaging to send personalized reminders and updates.
+📅 Smart Task Scheduling: Keeps users on track with important milestones and deadlines using an intuitive planning system.
+🎨 Engaging User Experience: Designed with a clean and romantic UI to make wedding planning enjoyable and stress-free.
+🔔 Reminders & Notifications: Helps users stay organized with timely alerts for meetings, bookings, and important dates.`,
+  [
+    'assets/wedding_planner_images/wedding_1.png',
+    'assets/wedding_planner_images/wedding_2.png',
+    'assets/wedding_planner_images/wedding_3.png',
+    'assets/wedding_planner_images/wedding_4.png',
+    'assets/wedding_planner_images/wedding_5.png',
+    'assets/wedding_planner_images/wedding_6.png',
+    'assets/wedding_planner_images/wedding_7.png',
+    'assets/wedding_planner_images/wedding_8.png',
+    'assets/wedding_planner_images/wedding_9.png',
+    'assets/wedding_planner_images/wedding_10.png',
+    'assets/wedding_planner_images/wedding_11.png',
+  ],
+  ['Flutter', 'Firebase', 'Cloud Messaging', 'Task Scheduling', 'Reminders', 'Collaboration']
+)" class="cursor-pointer project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="assets/project_mian_head/wedding.png"
+                            alt="Wedding planning dashboard showing budget breakdown, guest count, and timeline management"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20">
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-white bg-teal-600">Popular</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Wedding Planner</h3>
+                        <p class="text-gray-600 mb-4">Complete wedding organization</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Task Scheduling</span>
+                            <span class="tech-tag">Reminders</span>
+                            <span class="tech-tag">Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 backdrop-blur-sm overflow-y-auto">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl relative overflow-hidden animate-fade-in">
+
+                <!-- Close Button -->
+                <button onclick="closeModal()"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-[#293519]text-3xl font-bold transition duration-200">
+                    &times;
+                </button>
+
+                <!-- Modal Content -->
+                <div class="p-6">
+                    <!-- Title -->
+                    <h3 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-4"></h3>
+
+                    <!-- Image -->
+                    <!-- Carousel -->
+                    <div id="carouselContainer" class="relative mb-6">
+                        <div id="carouselSlides" class="overflow-hidden rounded-xl shadow relative">
+                            <!-- Slides will be injected here -->
+                        </div>
+
+                        <!-- Controls -->
+                        <button id="prevSlide"
+                            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow hover:bg-opacity-100 z-10">
+                            &#8592;
+                        </button>
+                        <button id="nextSlide"
+                            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow hover:bg-opacity-100 z-10">
+                            &#8594;
+                        </button>
+                    </div>
+
+
+                    <!-- Description -->
+                    <p id="modalDescription" class="text-gray-700 text-lg leading-relaxed mb-6"></p>
+
+                    <!-- Tags -->
+                    <div id="modalTags" class="flex flex-wrap gap-3 mb-6"></div>
+
+                    <!-- Features -->
+                    <h4 class="text-xl font-semibold text-[#1a230f]mb-4">Key Features</h4>
+                    <ul id="modalFeatures" class="space-y-3 text-gray-700 mb-6">
+                        <!-- Injected by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Testimonials Section -->
+    <!-- <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Client Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What people say about my work</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c749e5d-7e09-4ae8-aa4c-e09b7b821131.png"
+                            alt="Client portrait" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Client Name</h4>
+                            <p class="text-[#293519]text-sm">CEO, Client Company</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Moeen delivered a high-quality Flutter app with excellent performance and
+                        attention to detail."</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#293519] mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss potential opportunities?
+                </p>
+            </div>
+
+            <!-- Two-column layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+                <!-- Left: Contact Info -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Contact Information</h3>
+                        <p class="text-gray-600 mt-2">Feel free to reach out using the form or directly through the info
+                            below.</p>
+                    </div>
+
+                    <div class="text-gray-700 space-y-4">
+                        <p><strong>Name:</strong> Hasnain Haider</p>
+                        <p><strong>Email:</strong> <a href="mailto:hasnainhaiderflutterdev@gmail.com"
+                                class="text-[#293519]hover:underline">hasnainhaiderflutterdev@gmail.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+923174200588" class="text-[#293519]hover:underline">+92
+                                317 4200588</a></p>
+                        <p><strong>Location:</strong> Lahore, Pakistan</p>
+                        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hasnainhaider-fullstackdeveloper"
+                                target="_blank" class="text-[#293519]hover:underline">View Profile</a></p>
+                    </div>
+
+                    <!-- Social Icons (duplicated for visibility on all screens) -->
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <!-- GitHub -->
+                        <a href="https://github.com/Haiderdogar" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition">
+                            <i class="fab fa-github text-gray-700 text-lg"></i>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/hasnainhaider-fullstackdeveloper" target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-blue-200 transition">
+                            <i class="fab fa-linkedin-in text-blue-700 text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <form action="https://formspree.io/f/meokwkjz" method="POST"
+                    class="space-y-6 bg-white p-8 rounded-xl shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" name="email" id="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" name="subject" id="subject"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea name="message" id="message" rows="5" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full bg-[#293519] text-white px-6 py-4 rounded-lg font-medium hover:bg-[#1e2a12] transition duration-200">
+                            Send Message
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>s
+
+    <!-- Footer -->
+    <footer class="bg-[#293519] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Left Section -->
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold text-[#EFD003]">Hasnain Haider – Flutter Developer</span>
+                    <p class="text-gray-300 mt-2">Creating beautiful, performant mobile apps</p>
+                </div>
+
+                <!-- Right Navigation Links -->
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-300 hover:text-[#EFD003] transition duration-200">Home</a>
+                    <a href="#skills" class="text-gray-300 hover:text-[#EFD003] transition duration-200">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-[#EFD003] transition duration-200">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-[#EFD003] transition duration-200">Contact</a>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-[#1e2a12] mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 Flutter Developer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Here you would typically send the data to a server
+                console.log('Form submitted:', { name, email, subject, message });
+
+                // Show success message
+                alert('Thank you for your message! I will get back to you soon.');
+
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+
+<!-- Typing Script -->
+<script>
+    const phrases = [
+        "And I'm an Expert Flutter Developer",
+        "And I'm a UI/UX Design to Code Expert",
+        "And I'm a Clean Architecture Specialist",
+        "And I Turn Ideas Into Apps",
+        "And I Build Fast, Beautiful UI"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    let isEnd = false;
+    const typedText = document.getElementById("typed-text");
+
+    function loop() {
+        isEnd = false;
+        typedText.innerHTML = currentPhrase.join("");
+
+        if (i < phrases.length) {
+            if (!isDeleting && j <= phrases[i].length) {
+                currentPhrase.push(phrases[i][j]);
+                j++;
+                typedText.innerHTML = currentPhrase.join("");
+            }
+
+            if (isDeleting && j <= phrases[i].length) {
+                currentPhrase.pop();
+                j--;
+                typedText.innerHTML = currentPhrase.join("");
+            }
+
+            if (j === phrases[i].length) {
+                isEnd = true;
+                isDeleting = true;
+            }
+
+            if (isDeleting && j === 0) {
+                currentPhrase = [];
+                isDeleting = false;
+                i++;
+                if (i === phrases.length) {
+                    i = 0;
+                }
+            }
+        }
+
+        const speedUp = Math.random() * (80 - 50) + 50;
+        const normalSpeed = Math.random() * (200 - 100) + 100;
+        const time = isEnd ? 1500 : isDeleting ? speedUp : normalSpeed;
+        setTimeout(loop, time);
+    }
+
+    loop();
+</script>
+
+
+<!-- Typing Effect Script -->
+<script>
+    const aboutPhrases = [
+        "UI/UX Design to Code Specialist",
+        "Expert Flutter Developer",
+        "Mobile App Performance Expert",
+        "Clean Architecture Advocate",
+        "State Management Pro"
+    ];
+
+    let ai = 0, aj = 0;
+    let current = [];
+    let deleting = false;
+    const typedAbout = document.getElementById("typed-about");
+
+    function typeLoop() {
+        typedAbout.innerHTML = current.join("");
+
+        if (!deleting && aj <= aboutPhrases[ai].length) {
+            current.push(aboutPhrases[ai][aj++]);
+        }
+
+        if (deleting && aj > 0) {
+            current.pop();
+            aj--;
+        }
+
+        if (!deleting && aj === aboutPhrases[ai].length) {
+            deleting = true;
+            setTimeout(typeLoop, 1500);
+            return;
+        }
+
+        if (deleting && aj === 0) {
+            deleting = false;
+            ai = (ai + 1) % aboutPhrases.length;
+        }
+
+        setTimeout(typeLoop, deleting ? 40 : 100);
+    }
+
+    document.addEventListener("DOMContentLoaded", typeLoop);
+</script>
+
+
+<script>
+    const projectFeatures = {
+        'Artflow Pro': [
+            'Artist portfolio management',
+            'Role-based accounts (Free/Pro)',
+            'Secure art transactions',
+            'Gallery virtual tours',
+            'Community engagement tools'
+        ],
+        'Spheres – AI Personal Assistant': [
+            'Personal task management',
+            'AI-powered conversations',
+            'Emotional state tracking',
+            'Secure personal journal',
+            'Smart reminders'
+        ],
+        'Webination Business Hub': [
+            'Real-time ASP.NET API integration',
+            'Interactive charts and graphs',
+            'Shimmer loading UX effects',
+            'Infinite data scroll support',
+            'Location-based business listings',
+            'Detailed company and user profiles',
+            'U.S.-focused business data analytics'
+        ],
+        'CareHub Health Platform': [
+            'Role-based access for caregiver, patient, and family',
+            'Cross-platform Flutter app (iOS & Android)',
+            'Phone number authentication via Firebase',
+            'Real-time chat for connected care',
+            'Push notifications with FCM',
+            'Riverpod for scalable state management',
+            'Multilingual UI with Flutter Intl',
+            'Responsive and scalable design'
+        ],
+        'BRAKE Automotive': [
+            'Real-time slide sync across devices',
+            'Cross-platform app for Android, iOS, and Web',
+            'Live updates via Firebase',
+            'ASP.NET API for session control',
+            'Two-way control: mobile and web',
+            'Multi-device simultaneous login',
+            'Professional presenter-viewer experience'
+        ],
+        'BuySpy Marketplace': [
+            'Real-time price comparison',
+            'Deal alerts & notifications',
+            'Product review aggregation',
+            'Personalized recommendations',
+            'Wishlist tracking'
+        ],
+        'Seabee Learning': [
+            'Personalized learning paths',
+            'Interactive course content',
+            'Progress tracking',
+            'Certification preparation',
+            'Offline access'
+        ],
+        'Carbid Marketplace': [
+            'Verified vehicle listings',
+            'Financing options',
+            'Vehicle history reports',
+            'Secure escrow services',
+            'AI pricing recommendations'
+        ],
+        'Wedding Planner Pro': [
+            'Budget tracking tools',
+            'Vendor management system',
+            'Guest list organization',
+            'Seating chart creation',
+            'Timeline planning'
+        ]
+    };
+
+    let currentSlideIndex = 0;
+    let slideImages = [];
+
+    function openModal(title, description, images, tags) {
+        const modal = document.getElementById('projectModal');
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDescription').innerHTML = description;
+
+        // Tags
+        const tagContainer = document.getElementById('modalTags');
+        tagContainer.innerHTML = '';
+        tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'tech-tag bg-[#d5dabe] text-[#1d2b11] px-3 py-1 rounded-full text-sm font-medium';
+            span.textContent = tag;
+            tagContainer.appendChild(span);
+        });
+
+        // Carousel Images
+        slideImages = Array.isArray(images) ? images : [images];
+        currentSlideIndex = 0;
+        renderSlide();
+
+        // Features
+        const featuresList = document.getElementById('modalFeatures');
+        featuresList.innerHTML = '';
+        (projectFeatures[title] || []).forEach(feature => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start';
+            li.innerHTML = `
+                <svg class="flex-shrink-0 h-5 w-5 text-indigo-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                ${feature}
+            `;
+            featuresList.appendChild(li);
+        });
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function renderSlide() {
+        const container = document.getElementById('carouselSlides');
+        container.innerHTML = '';
+
+        const img = document.createElement('img');
+        img.src = slideImages[currentSlideIndex];
+        img.alt = "Project Screenshot";
+        img.className = 'w-full max-h-[400px] object-contain transition-all duration-500';
+        container.appendChild(img);
+    }
+
+    function closeModal() {
+        document.getElementById('projectModal').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slideImages.length;
+            renderSlide();
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slideImages.length) % slideImages.length;
+            renderSlide();
+        });
+    });
+</script>
