@@ -33,7 +33,7 @@
         }
 
         body.light-theme {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             color: #1a1a1a;
         }
 
@@ -52,6 +52,10 @@
             z-index: -1;
             pointer-events: none;
             overflow: hidden;
+        }
+
+        .light-theme .animated-bg {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .floating-box {
@@ -79,6 +83,10 @@
             animation-delay: 2s;
         }
 
+        .light-theme .floating-box.box-2 {
+            border-color: rgba(41, 53, 25, 0.15);
+        }
+
         .floating-box.box-3 {
             width: 250px;
             height: 250px;
@@ -99,6 +107,10 @@
             position: absolute;
             background: linear-gradient(90deg, transparent, rgba(239, 208, 3, 0.3), transparent);
             animation: line-animation 4s ease-in-out infinite;
+        }
+
+        .light-theme .animated-line {
+            background: linear-gradient(90deg, transparent, rgba(41, 53, 25, 0.2), transparent);
         }
 
         .line-h1 {
@@ -139,6 +151,10 @@
             animation: particle-float 6s ease-in infinite;
         }
 
+        .light-theme .particle {
+            background: rgba(41, 53, 25, 0.3);
+        }
+
         @keyframes particle-float {
             0% { transform: translateY(0) translateX(0); opacity: 0; }
             10% { opacity: 1; }
@@ -164,6 +180,7 @@
             font-size: 24px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(239, 208, 3, 0.3);
+            color: #293519;
         }
 
         .theme-toggle:hover {
@@ -173,6 +190,7 @@
 
         .dark-theme .theme-toggle {
             background: rgba(100, 100, 100, 0.9);
+            color: white;
         }
 
         /* Gradient Background */
@@ -263,7 +281,7 @@
         .skill-badge {
             perspective: 1000px;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            background: rgba(255, 255, 255, 0.9) !important;
+            background: rgba(255, 255, 255, 0.95) !important;
         }
 
         .dark-theme .skill-badge {
@@ -353,6 +371,11 @@
             background: rgba(41, 53, 25, 0.95);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
+        }
+
+        .light-theme nav {
+            background: rgba(41, 53, 25, 0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .dark-theme nav {
@@ -716,6 +739,10 @@
             color: #555;
         }
 
+        .light-theme section:not(.gradient-bg) {
+            background-color: #ffffff;
+        }
+
         /* Dark theme text colors */
         .dark-theme {
             color: #e0e0e0;
@@ -731,7 +758,7 @@
     </style>
 </head>
 
-<body class="light-theme bg-gray-50">
+<body class="light-theme bg-white">
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-box box-1"></div>
@@ -889,7 +916,7 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="py-20 relative">
+    <section id="about" class="py-20 relative bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-[#293519] mb-4">
@@ -916,7 +943,7 @@
                         </h3>
 
                         <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                            With 2+ years of professional experience, I specialize in building scalable, maintainable mobile applications that combine technical excellence with beautiful user interfaces.
+                            With 2+ years of professional experience, I specialize in building scalable, maintainable mobile applications that combine technical excellence with beautiful user interfaces. I'm passionate about writing clean code and delivering exceptional results.
                         </p>
 
                         <div class="mb-8">
@@ -981,7 +1008,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-[#293519] mb-4">
@@ -999,17 +1026,7 @@
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
                         <div class="skill-badge-icon text-3xl">🐦</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Flutter</h3>
-                    <p class="text-xs text-gray-600">Framework</p>
-                </div>
-
-                <!-- Dart -->
-                <div class="skill-badge bg-blue-50 rounded-2xl p-6 text-center transition cursor-pointer group">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">💙</div>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Dart</h3>
-                    <p class="text-xs text-gray-600">Language</p>
+                    <p class="font-semibold text-gray-800">Flutter</p>
                 </div>
 
                 <!-- Firebase -->
@@ -1017,407 +1034,100 @@
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
                         <div class="skill-badge-icon text-3xl">🔥</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Firebase</h3>
-                    <p class="text-xs text-gray-600">Backend</p>
+                    <p class="font-semibold text-gray-800">Firebase</p>
                 </div>
 
-                <!-- UI/UX -->
-                <div class="skill-badge bg-purple-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                <!-- Dart -->
+                <div class="skill-badge bg-blue-50 rounded-2xl p-6 text-center transition cursor-pointer group">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">🎨</div>
+                        <div class="skill-badge-icon text-3xl">🎯</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">UI/UX</h3>
-                    <p class="text-xs text-gray-600">Design</p>
+                    <p class="font-semibold text-gray-800">Dart</p>
+                </div>
+
+                <!-- REST API -->
+                <div class="skill-badge bg-green-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
+                        <div class="skill-badge-icon text-3xl">🌐</div>
+                    </div>
+                    <p class="font-semibold text-gray-800">REST API</p>
+                </div>
+
+                <!-- Git -->
+                <div class="skill-badge bg-red-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
+                        <div class="skill-badge-icon text-3xl">📚</div>
+                    </div>
+                    <p class="font-semibold text-gray-800">Git</p>
                 </div>
 
                 <!-- State Management -->
-                <div class="skill-badge bg-red-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                <div class="skill-badge bg-purple-50 rounded-2xl p-6 text-center transition cursor-pointer group">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
                         <div class="skill-badge-icon text-3xl">⚙️</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">State Mgmt</h3>
-                    <p class="text-xs text-gray-600">Provider, Riverpod</p>
+                    <p class="font-semibold text-gray-800">State Mgmt</p>
                 </div>
 
-                <!-- API Integration -->
-                <div class="skill-badge bg-cyan-50 rounded-2xl p-6 text-center transition cursor-pointer group">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">🔗</div>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">API Integration</h3>
-                    <p class="text-xs text-gray-600">REST, GraphQL</p>
-                </div>
-
-                <!-- GitHub -->
-                <div class="skill-badge bg-gray-50 rounded-2xl p-6 text-center transition cursor-pointer group">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">🐙</div>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Git</h3>
-                    <p class="text-xs text-gray-600">Version Control</p>
-                </div>
-
-                <!-- Push Notifications -->
+                <!-- UI/UX -->
                 <div class="skill-badge bg-pink-50 rounded-2xl p-6 text-center transition cursor-pointer group">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">📬</div>
+                        <div class="skill-badge-icon text-3xl">🎨</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Push Notifications</h3>
-                    <p class="text-xs text-gray-600">FCM, OneSignal</p>
+                    <p class="font-semibold text-gray-800">UI/UX</p>
                 </div>
 
-                <!-- Google Maps -->
-                <div class="skill-badge bg-green-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                <!-- Performance -->
+                <div class="skill-badge bg-cyan-50 rounded-2xl p-6 text-center transition cursor-pointer group">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">🗺️</div>
+                        <div class="skill-badge-icon text-3xl">⚡</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Google Maps</h3>
-                    <p class="text-xs text-gray-600">Location</p>
+                    <p class="font-semibold text-gray-800">Performance</p>
                 </div>
 
-                <!-- AI Integration -->
-                <div class="skill-badge bg-blue-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                <!-- Testing -->
+                <div class="skill-badge bg-yellow-50 rounded-2xl p-6 text-center transition cursor-pointer group">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
-                        <div class="skill-badge-icon text-3xl">🤖</div>
+                        <div class="skill-badge-icon text-3xl">✅</div>
                     </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">AI Integration</h3>
-                    <p class="text-xs text-gray-600">ChatGPT, Claude</p>
+                    <p class="font-semibold text-gray-800">Testing</p>
+                </div>
+
+                <!-- Problem Solving -->
+                <div class="skill-badge bg-lime-50 rounded-2xl p-6 text-center transition cursor-pointer group">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-full shadow-md group-hover:shadow-lg transition">
+                        <div class="skill-badge-icon text-3xl">🧠</div>
+                    </div>
+                    <p class="font-semibold text-gray-800">Problem Solving</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-[#293519] mb-4">
-                    Professional <span class="gradient-text">Journey</span>
-                </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Building quality software and gaining real-world experience</p>
-            </div>
-
-            <div class="space-y-8 max-w-3xl mx-auto">
-
-                <!-- Experience 1: Freelance -->
-                <div class="timeline-item flex gap-6 relative group p-6 rounded-2xl bg-white hover:shadow-lg transition">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center shadow-md">
-                        <i class="fas fa-rocket text-green-600 text-lg"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-gray-800">Flutter Developer</h3>
-                        <p class="text-green-600 font-semibold">Self-Employed | Present</p>
-                        <p class="text-gray-700 mt-3 leading-relaxed">
-                            Working with international clients to design and develop feature-rich mobile apps. Focused on clean architecture, intuitive UI/UX, payment integration, and AI-powered features.
-                        </p>
-                        <div class="flex gap-2 mt-4 flex-wrap">
-                            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">Client Projects</span>
-                            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">Full Stack</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience 2: Orbion Technologies -->
-                <div class="timeline-item flex gap-6 relative group p-6 rounded-2xl bg-white hover:shadow-lg transition">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shadow-md">
-                        <i class="fas fa-code text-indigo-600 text-lg"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-gray-800">Senior Flutter Developer</h3>
-                        <p class="text-indigo-600 font-semibold">Orbion Technologies | Mar 2024 – May 2026</p>
-                        <p class="text-gray-700 mt-3 leading-relaxed">
-                            Led the development of production-ready Flutter applications with scalable architecture, implementing CI/CD pipelines, performance optimization, and code quality standards.
-                        </p>
-                        <div class="flex gap-2 mt-4 flex-wrap">
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-medium">Production Apps</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-medium">Team Lead</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-medium">CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-[#293519] mb-4">
-                    Featured <span class="gradient-text">Projects</span>
-                </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    A curated selection of innovative applications built with modern technologies and best practices
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project 1: Artflow Pro -->
-                <div class="project-card group cursor-pointer" onclick="openModal('Artflow Pro', 'assets/project_mian_head/artflowpro.png', 'Artflow Pro is a feature-rich platform designed for artists and galleries, supporting role-based access and monetization via tiered subscription models. Built with Flutter for mobile and ASP.NET backend with AI-powered recommendation engine.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-purple-100 to-pink-100">
-                        <img src="assets/project_mian_head/artflowpro.png" alt="Artflow Pro - Artist platform with gallery features" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold text-white bg-[#EFD003] text-[#293519]">Featured</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">Artflow Pro</h3>
-                        <p class="text-gray-600 text-sm mb-4">Artist &amp; Gallery Platform with AI, Role-Based Access, and Real-Time Features</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">ASP.NET</span>
-                            <span class="tech-tag">AI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Spheres App -->
-                <div class="project-card group cursor-pointer" onclick="openModal('Spheres – AI Personal Assistant', 'assets/project_mian_head/spheres.png', 'Spheres is a smart AI-powered assistant app designed to boost personal productivity through intelligent task handling and scheduling. Features real-time sync with Firebase, push notifications, and GPT integration for personalized recommendations.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-blue-100 to-purple-100">
-                        <img src="assets/project_mian_head/spheres.png" alt="Spheres - AI Assistant App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">Spheres App</h3>
-                        <p class="text-gray-600 text-sm mb-4">AI-powered personal assistant for productivity &amp; well-being</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">AI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Webination App -->
-                <div class="project-card group cursor-pointer" onclick="openModal('Webination Business Hub', 'assets/project_mian_head/webnition.png', 'Webnition is a powerful data-driven mobile application built to visualize and analyze business and personal information across the US market. Features advanced analytics, real-time data sync, and comprehensive reporting dashboards.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-cyan-100 to-blue-100">
-                        <img src="assets/project_mian_head/webnition.png" alt="Webination - Business Analytics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold text-white bg-blue-600">New</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">Webination</h3>
-                        <p class="text-gray-600 text-sm mb-4">Business insights &amp; analytics platform for U.S. markets</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">ASP.NET</span>
-                            <span class="tech-tag">Analytics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: CareHub -->
-                <div class="project-card group cursor-pointer" onclick="openModal('CareHub Health Platform', 'assets/project_mian_head/carehub.png', 'CareHub is a scalable mobile healthcare app built for caregivers, patients, and family members. Features real-time patient monitoring, secure messaging, appointment scheduling, and health tracking with Firebase backend.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-red-100 to-pink-100">
-                        <img src="assets/project_mian_head/carehub.png" alt="CareHub - Healthcare Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">CareHub</h3>
-                        <p class="text-gray-600 text-sm mb-4">Cross-platform healthcare companion</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Chat</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: BRAKE -->
-                <div class="project-card group cursor-pointer" onclick="openModal('BRAKE Presentation Controller', 'assets/project_mian_head/brake.png', 'BRAKE is a cross-platform presentation and sync tool that enables real-time slide synchronization across mobile and web devices. Perfect for presenters who need seamless control of their presentations.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-yellow-100 to-orange-100">
-                        <img src="assets/project_mian_head/brake.png" alt="BRAKE - Presentation Sync" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">BRAKE</h3>
-                        <p class="text-gray-600 text-sm mb-4">Real-time sync &amp; presentation controller</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Real-Time</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Wedding Planner -->
-                <div class="project-card group cursor-pointer" onclick="openModal('Wedding Planner Pro', 'assets/project_mian_head/wedding.png', 'Wedding Planner is an elegant and intuitive mobile app designed to help users effortlessly organize their weddings. Complete with budget tracking, guest management, vendor coordination, and collaborative features for couple planning.')">
-                    <div class="h-64 overflow-hidden relative bg-gradient-to-br from-pink-100 to-rose-100">
-                        <img src="assets/project_mian_head/wedding.png" alt="Wedding Planner - Planning Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold text-white bg-rose-600">Popular</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#EFD003] transition">Wedding Planner</h3>
-                        <p class="text-gray-600 text-sm mb-4">Complete wedding organization &amp; planning</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Collab</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-16">
-                <p class="text-gray-600 mb-6 text-lg">Interested in seeing more projects?</p>
-                <a href="#contact" class="btn-primary bg-[#293519] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#EFD003] hover:text-[#293519] transition duration-300 inline-flex items-center gap-2">
-                    <i class="fas fa-envelope"></i>
-                    Let's Connect
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-image-container">
-                <img id="modalImage" src="" alt="Project Image" />
-            </div>
-            <div class="modal-body">
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <p class="modal-description" id="modalDescription"></p>
-                <div class="flex gap-4 mt-6">
-                    <a href="#projects" class="btn-primary bg-[#293519] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#EFD003] hover:text-[#293519] transition">
-                        <i class="fas fa-arrow-left"></i> Back to Projects
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-[#293519] mb-4">
-                    Get In <span class="gradient-text">Touch</span>
-                </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Let's collaborate and create something amazing together</p>
-            </div>
-
-            <div class="max-w-3xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="text-center p-6 rounded-2xl bg-white hover:shadow-lg transition">
-                        <div class="w-16 h-16 bg-[#EFD003] rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-envelope text-[#293519] text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-800 mb-2">Email</h3>
-                        <a href="mailto:hello@hasnain.com" class="text-[#293519] hover:text-[#EFD003]">hello@hasnain.com</a>
-                    </div>
-
-                    <div class="text-center p-6 rounded-2xl bg-white hover:shadow-lg transition">
-                        <div class="w-16 h-16 bg-[#EFD003] rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-phone text-[#293519] text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-800 mb-2">Phone</h3>
-                        <a href="tel:+92123456789" class="text-[#293519] hover:text-[#EFD003]">+92 (123) 456-789</a>
-                    </div>
-
-                    <div class="text-center p-6 rounded-2xl bg-white hover:shadow-lg transition">
-                        <div class="w-16 h-16 bg-[#EFD003] rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-map-marker-alt text-[#293519] text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-800 mb-2">Location</h3>
-                        <p class="text-[#293519]">Pakistan</p>
-                    </div>
-                </div>
-
-                <div class="flex justify-center gap-6 mb-12">
-                    <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-full bg-[#293519] text-white flex items-center justify-center hover:bg-[#EFD003] hover:text-[#293519] transition">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-full bg-[#293519] text-white flex items-center justify-center hover:bg-[#EFD003] hover:text-[#293519] transition">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" class="w-12 h-12 rounded-full bg-[#293519] text-white flex items-center justify-center hover:bg-[#EFD003] hover:text-[#293519] transition">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#293519] text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p>&copy; 2024 Hasnain Haider. All rights reserved.</p>
-                <p class="text-sm text-gray-400 mt-2">Built with <span class="text-[#EFD003]">❤️</span> using Flutter &amp; Web Technologies</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // Typing Animation
-        const words = ['Flutter Developer', 'Mobile App Enthusiast', 'Problem Solver', 'Tech Innovator'];
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let currentWord = '';
-        let isDeleting = false;
-
-        function typeWord() {
-            const typedElement = document.getElementById('typed-text');
-            
-            if (!isDeleting) {
-                if (letterIndex < words[wordIndex].length) {
-                    currentWord += words[wordIndex][letterIndex];
-                    letterIndex++;
-                } else {
-                    isDeleting = true;
-                    setTimeout(typeWord, 2000);
-                    return;
-                }
-            } else {
-                if (letterIndex > 0) {
-                    currentWord = words[wordIndex].substring(0, letterIndex - 1);
-                    letterIndex--;
-                } else {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    letterIndex = 0;
-                    currentWord = '';
-                }
-            }
-
-            typedElement.textContent = currentWord;
-            setTimeout(typeWord, isDeleting ? 50 : 100);
-        }
-
-        typeWord();
-
-        // Theme Toggle
+        // Theme Toggle Functionality
         const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
         const body = document.body;
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        body.classList.add(savedTheme + '-theme');
-        updateThemeIcon(savedTheme);
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light-theme';
+        body.classList.add(savedTheme);
+        updateThemeIcon();
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            body.classList.remove(currentTheme + '-theme');
-            body.classList.add(newTheme + '-theme');
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            body.classList.toggle('light-theme');
+            body.classList.toggle('dark-theme');
+            
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+            localStorage.setItem('theme', currentTheme);
+            updateThemeIcon();
         });
 
-        function updateThemeIcon(theme) {
+        function updateThemeIcon() {
             const icon = themeToggle.querySelector('i');
-            if (theme === 'dark') {
+            if (body.classList.contains('dark-theme')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             } else {
@@ -1426,52 +1136,53 @@
             }
         }
 
-        // Modal Functions
-        function openModal(title, imageSrc, description) {
-            const modal = document.getElementById('projectModal');
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalImage').src = imageSrc;
-            document.getElementById('modalDescription').textContent = description;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('projectModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (event) => {
-            const modal = document.getElementById('projectModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Typing Animation
+        const texts = [
+            'Flutter Developer',
+            'Mobile App Creator',
+            'UI/UX Enthusiast',
+            'Problem Solver'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenTexts = 2000;
+
+        function type() {
+            const currentText = texts[textIndex];
+            const displayedText = isDeleting 
+                ? currentText.substring(0, charIndex--) 
+                : currentText.substring(0, charIndex++);
+
+            document.getElementById('typed-text').textContent = displayedText;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, delayBetweenTexts);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+            }
+        }
+
+        type();
     </script>
 </body>
 
